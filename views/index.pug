@@ -1,27 +1,31 @@
-doctype
+
 html(lang='en')
     head
-        meta(charset='utf-8')
-        title TV SYNOPSIS 
-    body
+        meta(name="description" content="Episode Info")
+        title Kim's Convenience 
+        link(rel="stylesheet", href="pugstyle.css")
+
+
+
+body
     h1 Kim's Convenience 
-    h2 Developed By 
-    ul 
-        li Ins Choi 
-        li Kevin Whit 
-    h2  Starring 
-    ul 
-        li Paul Sun-Hyung Lee 
-        li Jean Yoon 
-        li Andrea Bang 
-        li Simu Liu 
-        li Andrew Phung 
-        li Nicole Power 
-    h3 Seasons 
-    ul 
-        li a(href="") Season 1 
-        li a(href="") Season 2
-        li a(href="") Season 3
-        li a(href="") Season 4
+     div.show-info
+    h2 Developed By
+    ul
+      for dev in showdata.developedBy
+        li= dev 
+
+    h2 Starring
+    ul
+      for star in showdata.starring
+        li= star
+
+    h2 Seasons
+    ul
+    for  season in showdata.seasons
+        li
+          a(href=`/season/${season.number}`)= `Season ${season.number}`
+
+ 
 
 
