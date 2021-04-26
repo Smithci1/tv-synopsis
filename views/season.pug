@@ -1,0 +1,26 @@
+doctype
+html(lang='en')
+
+    head
+        meta(name="description" content="Episode Info")
+        title Kim's Convenience 
+        link(rel="stylesheet", href="/pugstyle.css")
+  
+    body
+     
+    h5  Kim's Convenience 
+     h4= `SEASON ${season.number}`
+
+    table
+      tr
+        th No.
+        th Title
+        th Director
+      for episode in season.episodes
+        tr
+          td(class="number")= episode.number
+          td(class="title")= episode.title
+          td(class="director")= episode.director
+        tr
+          td(colspan=3)= episode.synopsis
+        
